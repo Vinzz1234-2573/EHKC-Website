@@ -3,8 +3,21 @@
    Link this LAST in <head> after all inline <style> blocks
    ====================================================== */
 
-/* 1. Overflow guard — missing on dashboard, login, signup, admin */
+/* 1. Overflow guard — missing on dashboard, login, signup, admin
+      `clip` (not `hidden`) so <body> doesn't become a scroll container,
+      which would stop the sticky header from pinning. */
 html, body { overflow-x: hidden; max-width: 100%; }
+@supports (overflow-x: clip) {
+  html, body { overflow-x: clip !important; }
+}
+
+/* 1b. Header always pinned to the top while scrolling */
+#hdr { position: sticky !important; top: 0; z-index: 100; }
+
+/* 1c. Sign In is admin-only — revealed by the nav-auth script for admins */
+#nav-auth, #mob-signin { display: none !important; }
+body.is-admin #nav-auth { display: block !important; }
+body.is-admin #mob-signin { display: flex !important; }
 
 /* 2. Hide cursor-glow on touch devices — better than JS width check */
 @media (pointer: coarse) {

@@ -270,9 +270,9 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
 .photo-cap-label i{color:var(--gold-l)}
 
 /* VIDEO SECTION */
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem}
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;align-items:start}
 .video-card{border-radius:var(--r-lg);overflow:hidden;background:#000;position:relative;box-shadow:0 12px 40px rgba(10,40,45,.18)}
-.video-card video{width:100%;height:100%;display:block;aspect-ratio:16/9;object-fit:cover}
+.video-card video{width:100%;height:auto;max-height:80vh;display:block;object-fit:contain;background:#000}
 .video-card-label{position:absolute;top:1rem;left:1rem;background:rgba(26,36,47,.75);backdrop-filter:blur(8px);color:#fff;border-radius:999px;padding:.3rem .85rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem}
 .video-card-label i{color:var(--gold-l)}
 
@@ -708,7 +708,9 @@ if (typeof initLang === 'function') initLang();
   if (!session) return;
   const { data: profile } = await sb.from('profiles').select('name,role').eq('id', session.user.id).single();
   const first = (profile?.name || session.user.email?.split('@')[0] || 'Account').split(' ')[0];
-  const dest = profile?.role === 'admin' ? 'admin.html' : 'dashboard.html';
+  if (profile?.role !== 'admin') return;
+  document.body.classList.add('is-admin');
+  const dest = 'admin.html';
   const authEl = document.getElementById('nav-auth');
   const mobEl  = document.getElementById('mob-signin');
   if (authEl) authEl.innerHTML = `<a href="${dest}" class="btn btn-ghost"><i class="fa fa-user"></i> ${first}</a>`;

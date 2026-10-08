@@ -1590,7 +1590,9 @@ document.querySelectorAll('.aos,.aos-l,.aos-r').forEach(el => aosObs.observe(el)
   if (!session) return;
   const { data: profile } = await sb.from('profiles').select('name,role').eq('id', session.user.id).single();
   const first = (profile?.name || session.user.email?.split('@')[0] || 'Account').split(' ')[0];
-  const dest = profile?.role === 'admin' ? 'admin.html' : 'dashboard.html';
+  if (profile?.role !== 'admin') return;
+  document.body.classList.add('is-admin');
+  const dest = 'admin.html';
   const authEl = document.getElementById('nav-auth');
   const mobEl  = document.getElementById('mob-signin');
   if (authEl) authEl.innerHTML = `<a href="${dest}" class="btn btn-ghost"><i class="fa fa-user"></i> ${first}</a>`;
