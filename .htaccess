@@ -28,3 +28,11 @@ Options -Indexes
 <IfModule mod_mime.c>
   AddCharset utf-8 .html .css .js
 </IfModule>
+
+# Always re-check HTML pages so visitors see updates immediately.
+# CSS/JS are versioned with ?v=YYYYMMDD in the pages, so they can stay cached.
+<IfModule mod_headers.c>
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+</IfModule>
