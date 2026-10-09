@@ -579,6 +579,7 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
 .mini-faq .wrap{position:relative}
 .mini-faq .sh{margin-bottom:2.8rem}
 .mfaq-grid{display:grid;grid-template-columns:1fr 1fr;gap:.55rem;margin-bottom:2.4rem}
+.mfaq-card:last-child:nth-child(odd){grid-column:1/-1}
 .mfaq-card{background:#fff;border:1px solid var(--line);border-radius:var(--r-lg);overflow:hidden;transition:border-color var(--t),box-shadow var(--t)}
 .mfaq-card:hover{border-color:var(--teal-400);box-shadow:var(--shadow-sm)}
 .mfaq-card.open{border-color:var(--teal-500);box-shadow:0 2px 16px rgba(196,122,74,.1)}
@@ -1188,16 +1189,6 @@ h2.section-h {
 
       <div class="mfaq-card" onclick="toggleMfaq(this)">
         <div class="mfaq-q">
-          <span class="mfaq-q-text" data-i18n="faq.q1">How much does it cost for a resident to stay?</span>
-          <span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span>
-        </div>
-        <div class="mfaq-a"><div class="mfaq-a-inner" data-i18n="faq.a1">
-          Monthly fees range from <strong>RM 1,800 to RM 2,500</strong> depending on the resident's level of care. Many residents receive subsidies — some stay for free. No one is turned away due to financial hardship.
-        </div></div>
-      </div>
-
-      <div class="mfaq-card" onclick="toggleMfaq(this)">
-        <div class="mfaq-q">
           <span class="mfaq-q-text" data-i18n="faq.q2">What types of elderly can be accommodated?</span>
           <span class="mfaq-icon"><i class="fa fa-chevron-down"></i></span>
         </div>
@@ -1274,9 +1265,9 @@ h2.section-h {
       <p data-i18n="foot.p">Amitabha Foundation Elder Home. 24/7 compassionate care, financial assistance, and home placement for seniors in Kuala Lumpur. Est. 2000.</p>
       <div class="foot-soc">
         <a href="https://www.facebook.com/people/Amitabha-Foundation-Elder-Home/61578688747686/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/amitabhafoundation" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@amitabhafoundation" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/amitabhamalaysia/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@amitabhamalaysia" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@amitabhafoundation" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
     <div class="foot-col">
@@ -1306,6 +1297,7 @@ h2.section-h {
   </div>
   <div class="foot-bot">
     <p data-i18n="foot.copyright">© 2026 Amitabha Foundation · Elder Care Programme · All rights reserved.</p>
+    <a href="/login" data-i18n="foot.staff" style="font-size:.74rem;color:rgba(255,255,255,.28);text-decoration:none">Staff login</a>
   </div>
 </footer>
 

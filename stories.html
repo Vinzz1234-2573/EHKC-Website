@@ -270,16 +270,16 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
 .photo-cap-label i{color:var(--gold-l)}
 
 /* VIDEO SECTION */
-.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem;margin-top:2.5rem;align-items:start}
+.video-grid{display:grid;grid-template-columns:minmax(0,360px);justify-content:center;gap:2rem;margin-top:2.5rem;align-items:start}
 .video-card{border-radius:var(--r-lg);overflow:hidden;background:#000;position:relative;box-shadow:0 12px 40px rgba(10,40,45,.18)}
-.video-card video{width:100%;height:auto;max-height:80vh;display:block;object-fit:contain;background:#000}
+.video-card video{width:100%;height:auto;aspect-ratio:9/16;display:block;object-fit:contain;background:#000}
 .video-card-label{position:absolute;top:1rem;left:1rem;background:rgba(26,36,47,.75);backdrop-filter:blur(8px);color:#fff;border-radius:999px;padding:.3rem .85rem;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.4rem}
 .video-card-label i{color:var(--gold-l)}
 
 /* Full-width banner shot spans all 3 columns at a widescreen ratio */
 .photo-wide{grid-column:1/-1;aspect-ratio:21/8}
 @media(max-width:900px){.photo-grid{grid-template-columns:repeat(2,1fr)}.photo-wide{aspect-ratio:16/7}}
-@media(max-width:640px){.photo-grid{grid-template-columns:1fr 1fr}.video-grid{grid-template-columns:1fr}.photo-wide{grid-column:1/-1;aspect-ratio:4/3}}
+@media(max-width:640px){.photo-grid{grid-template-columns:1fr 1fr}.video-grid{grid-template-columns:minmax(0,360px)}.photo-wide{grid-column:1/-1;aspect-ratio:4/3}}
 @media(max-width:480px){.photo-grid{grid-template-columns:1fr}.photo-wide{aspect-ratio:4/3}}
 
 
@@ -547,17 +547,10 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
     </div>
 
     <div class="video-grid">
-      <div class="video-card aos-l">
+      <div class="video-card aos">
         <div class="video-card-label" data-i18n-html="st.vid1.label"><i class="fa fa-play"></i> Home life</div>
         <video controls preload="metadata" poster="">
           <source src="Photo/Ehkc%20photo/Untitled%20design%20(12).mp4" type="video/mp4">
-          <span data-i18n="st.vid.fallback">Your browser does not support the video tag.</span>
-        </video>
-      </div>
-      <div class="video-card aos-r">
-        <div class="video-card-label" data-i18n-html="st.vid2.label"><i class="fa fa-play"></i> Our community</div>
-        <video controls preload="metadata" poster="">
-          <source src="Photo/Ehkc%20photo/Whatapp%20Video.mp4" type="video/mp4">
           <span data-i18n="st.vid.fallback">Your browser does not support the video tag.</span>
         </video>
       </div>
@@ -587,9 +580,9 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
       <p data-i18n="foot.p">Amitabha Foundation Elder Home. 24/7 compassionate care, financial assistance, and home placement for seniors in Kuala Lumpur. Est. 2000.</p>
       <div class="foot-soc">
         <a href="https://www.facebook.com/people/Amitabha-Foundation-Elder-Home/61578688747686/" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.instagram.com/amitabhafoundation" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com/@amitabhafoundation" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/amitabhamalaysia/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@amitabhamalaysia" target="_blank" rel="noopener"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@amitabhafoundation" target="_blank" rel="noopener"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
     <div class="foot-col">
@@ -619,6 +612,7 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
   </div>
   <div class="foot-bot">
     <p data-i18n="foot.copyright">© 2026 Amitabha Foundation · Elder Care Programme · All rights reserved.</p>
+    <a href="/login" data-i18n="foot.staff" style="font-size:.74rem;color:rgba(255,255,255,.28);text-decoration:none">Staff login</a>
   </div>
 </footer>
 
