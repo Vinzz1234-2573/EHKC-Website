@@ -215,3 +215,8 @@ main {
   }
   .about-media { padding-bottom: 1rem !important; }
 }
+
+/* Floating WhatsApp/Donate bar steps aside over the CTA band and footer,
+   which already show the same buttons */
+.float-bar{transition:opacity .3s ease,visibility .3s ease}
+.float-bar.fb-hide{opacity:0;visibility:hidden;pointer-events:none}

@@ -507,6 +507,7 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
   <a class="float-wa" href="https://wa.me/60127662911" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
   <a class="float-donate" href="https://m.amitabhafoundation.my/en/donation" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span class="fl-label" data-i18n="float.donate">Donate Now</span></a>
 </div>
+<script>(function(){var fb=document.querySelector('.float-bar');if(!fb||!('IntersectionObserver' in window))return;var on=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)on.add(e.target);else on.delete(e.target)});fb.classList.toggle('fb-hide',on.size>0)});document.querySelectorAll('.cta-band,footer').forEach(function(el){io.observe(el)})})();</script>
 
 <script>
 const hdr=document.getElementById('hdr');

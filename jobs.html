@@ -486,6 +486,7 @@ textarea.form-control{resize:vertical;min-height:90px}
   <a class="float-wa" href="https://wa.me/60127662911?text=Hello%2C%20I%20am%20interested%20in%20a%20job%20at%20Amitabha%20Foundation." target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> <span class="fl-label">WhatsApp</span></a>
   <a class="float-donate" href="https://m.amitabhafoundation.my/en/donation" target="_blank" rel="noopener"><i class="fa fa-hand-holding-heart"></i> <span class="fl-label" data-i18n="float.donate">Donate Now</span></a>
 </div>
+<script>(function(){var fb=document.querySelector('.float-bar');if(!fb||!('IntersectionObserver' in window))return;var on=new Set();var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)on.add(e.target);else on.delete(e.target)});fb.classList.toggle('fb-hide',on.size>0)});document.querySelectorAll('.cta-band,footer').forEach(function(el){io.observe(el)})})();</script>
 
 <!-- APPLICATION MODAL -->
 <div id="apply-modal" class="modal-overlay" style="display:none" onclick="if(event.target===this)closeApplyModal()">

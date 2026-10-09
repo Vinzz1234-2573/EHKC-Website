@@ -139,6 +139,7 @@
     'cta.p':        '您的捐赠资助餐食、药物和从容的照护，让一栋房子成为某人祖父母温暖的家。',
     'cta.donate':   '立即捐款',
     'cta.volunteer':'成为志愿者',
+    'cta.whatsapp': 'WhatsApp',
     'cta.seekHelp': '寻求帮助',
 
     /* Person in Charge */
