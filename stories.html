@@ -296,6 +296,11 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
 .story-feat-av img{border-radius:0!important;width:100%!important;height:100%!important;object-fit:cover!important}
 .story-feat-name,.story-feat-meta,.story-feat-quote{text-shadow:0 1px 6px rgba(0,0,0,.75)}
 </style>
+<style>
+/* Hide public Sign In; only logged-in admins see their account button */
+body:not(.is-admin) #nav-auth,
+body:not(.is-admin) #mob-signin{display:none !important}
+</style>
 <link rel="stylesheet" href="responsive.css?v=20261009">
 </head>
 <body>

@@ -183,6 +183,11 @@ footer{background:var(--teal-900);color:rgba(255,255,255,.5)}
   .faq-q{min-height:44px;padding:.95rem 1.1rem}
 }
 </style>
+<style>
+/* Hide public Sign In; only logged-in admins see their account button */
+body:not(.is-admin) #nav-auth,
+body:not(.is-admin) #mob-signin{display:none !important}
+</style>
 <link rel="stylesheet" href="responsive.css?v=20261009">
 <script type="application/ld+json">
 {
